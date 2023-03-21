@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 mt-3">
+      <h2 class="UserHeader">Add User</h2>
+
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" class="form-control" [(ngModel)]="userDetails.id" />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="name">NAME</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          #name
+          [(ngModel)]="userDetails.name"
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="id">SHORT NAME</label>
+        <input
+          type="text"
+          class="form-control"
+          id="shortname"
+          #shortname
+          [(ngModel)]="userDetails.title"
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="id">IMAGE</label>
+        <br />
+        <input
+          type="file"
+          id="myfile"
+          name="myfile"
+          id="image"
+          #image
+        /><br /><br />
+      </div>
+
+      <div class="row">
+        <div class="col-5"></div>
+        <div class="col-2">
+          <button class="btn btn-outline-success" (click)="addUser()">
+            Submit
+          </button>
+        </div>
+        <div class="col-5"></div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>

@@ -1,0 +1,53 @@
+<div class="container" style="height: 100vh">
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr class="text-center align-middle">
+            <th scope="col"><h2>ID</h2></th>
+            <th scope="col"><h2>NAME</h2></th>
+            <th scope="col"><h2>TITLE</h2></th>
+            <th scope="col"><h2>IMAGE</h2></th>
+            <th scope="col"><h2>#</h2></th>
+            <th scope="col"><h2>#</h2></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dt of data; index as i" class="text-center align-middle"  (click)="EditUser(dt.id)" style="cursor: pointer;">
+            <td>{{ dt.id }}</td>          
+            <td>{{ dt.name }}</td>
+            <td>{{ dt.title }}</td>
+            <td>
+              <img
+                src="{{ dt.url }}"
+                width="auto"
+                height="120px"
+                style="text-align: center; border-radius: 50%"
+              />
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                style="margin-left: 30px"
+                [routerLink]="['/home', dt.id,'edit']"
+              >
+                EDIT 
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                style="margin-left: 10px"
+                (click)="DeleteUser(i)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <br />
+  </div>

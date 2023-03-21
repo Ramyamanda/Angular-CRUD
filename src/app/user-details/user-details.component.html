@@ -1,0 +1,66 @@
+<div class="container" *ngIf="!loading">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-4 mt-3">
+        <h2 class="UserHeader">Update Users</h2>
+  
+        <div class="form-group">
+          <label for="id">ID</label>
+          <input  disabled type="text" class="form-control" [(ngModel)]="userDetails.id"/>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="name">NAME</label>
+          <input disabled
+            type="text"
+            class="form-control"
+            id="name"
+            #name
+            [(ngModel)]="userDetails.name"
+          />
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="id">SHORT NAME</label>
+          <input  disabled type="text"
+            class="form-control"
+            id="shortname"
+            #shortname
+            [(ngModel)]="userDetails.title"
+          />
+        </div>
+        </div>
+        <br />
+        <div class="col-4 text-center align-middle mt-5">
+          <img [src]="userDetails.url" width="auto"
+          height="250px"
+          style="text-align: center; border-radius: 50%"> 
+      </div>
+      <div class="row">
+        <div class="col-5"></div>
+        <div class="col-2 d-flex mt-5">
+           <button class="btn btn-outline-success" (click)="goBack()">
+            Back
+          </button>
+          <button 
+            type="button"
+            class="btn btn-outline-primary"
+            style="margin-left: 30px"
+            (click)="EditUser(userDetails.id)"
+          >
+            Edit
+          </button>
+        </div>
+        <div class="col-5"></div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+  
+  <div class="container text-center my-4" *ngIf="loading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden"></span>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
